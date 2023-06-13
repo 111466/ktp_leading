@@ -1,0 +1,52 @@
+.loginDiv{
+    width:100%;
+    height: 800px;
+}
+
+.logo_blue{
+    width: 150px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.loginContent{
+    width: 1180px;
+    height: 650px;
+    margin: 20px auto auto;
+}
+
+.loginContent img{
+    width: 780px;
+    float: left;
+    position: absolute;
+}
+
+.form{
+    width: 465px;
+    height: 82%;
+    float: right;
+    background-color: white;
+    box-shadow: 0 0 2px 2px rgba(128, 128, 128, 0.11);
+}
+
+.form h2{
+    width: 22%;
+    margin-left: 39%;
+    margin-top: 70px;
+}
+
+.input{
+    width:90%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    /*margin-left: 8%;*/
+}
+
+.loginBtn{
+    width:84%;
+    height:50px;
+    margin-left: 8%;
+    margin-top: -50px;
+    display: block;
+    font-size: 15px;
+}
