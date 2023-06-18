@@ -1,10 +1,12 @@
-import React, {CSSProperties} from 'react'
+import React, {CSSProperties, useRef} from 'react'
 import styles from './index.module.css'
 import {Collapse, CollapseProps, theme} from "antd";
 import CourseOverview from "../../../../components/courseOverview/index";
+import CourseSortWindow from "../windows/courseSortWindow/index";
 
 
 function CourseDisplayFrame(){
+    const sortRef = useRef<any>()
 
     const getItems: (panelStyle: CSSProperties) => CollapseProps['items'] = (panelStyle) => [
         {
@@ -14,7 +16,7 @@ function CourseDisplayFrame(){
                 <CourseOverview/>
             </>,
             style: panelStyle,
-            extra:<><img style={{width:"15px"}} src={require("../../../../img/sort.png")}/>课程排序</>
+            extra:<span onClick={()=>sortRef.current.openModal(true)}><img style={{width:"15px"}} src={require("../../../../img/sort.png")}/>课程排序</span>
         }
         ,{
             key: '2',
@@ -36,15 +38,18 @@ function CourseDisplayFrame(){
     };
 
     return(
-        <Collapse
-            defaultActiveKey={['1']}
-            // onChange={onChange}
-            expandIconPosition={"end"}
-            style={{ background: token.colorBgContainer}}
-            items={getItems(panelStyle)}
-            collapsible="icon"
-            expandIcon={({ isActive }) => <div><img style={{width:"10px"}} src={require("../../../../img/pullDownCourses.png")}/>{isActive?"展开":"收起"}</div>}
-        />
+        <>
+            <Collapse
+                defaultActiveKey={['1']}
+                // onChange={onChange}
+                expandIconPosition={"end"}
+                style={{ background: token.colorBgContainer}}
+                items={getItems(panelStyle)}
+                collapsible="icon"
+                expandIcon={({ isActive }) => <div><img style={{width:"10px"}} src={require("../../../../img/pullDownCourses.png")}/>{isActive?"展开":"收起"}</div>}
+            />
+            <CourseSortWindow onRef={sortRef}/>
+        </>
     )
 }
 

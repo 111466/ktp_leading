@@ -1,0 +1,12 @@
+.archiveDiv {
+    height: 500px;
+    border: 1px solid aqua;
+}
+
+.subCourse {
+    margin-left: 4%;
+    margin-top: 20px;
+    width:20%;
+    height:100px;
+    background-color: #beb9b9;
+}

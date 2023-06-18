@@ -4,13 +4,9 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import  styles from './index.module.css'
 import {loginData} from "@/page/login/interface";
-// import {useAppSelector,useAppDispatch} from "../../app/hooks";
-// import {selectUsername, updateUsername} from "./LoginSlice";
 
 function Login(){
     const history = useHistory();
-    // const username = useAppSelector(selectUsername);
-    // const dispatch = useAppDispatch()
 
     useEffect(()=>{
 

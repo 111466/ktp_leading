@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import styles from "./index.module.css"
 import TopCourse from "./topCourse/index";
 import {Button, Input, Tabs, TabsProps} from "antd";
 import CourseDisplayFrame from "./courseDisplayFrame/index";
+import ArchiveManagerWindow from "./windows/archiveManagerWindow/index";
 
 function MyClass(){
-
     const [activeKey,setActiveKey] = useState("teach")
+    const archiveRef = useRef<any>()
 
     const items: TabsProps['items'] = [
         {
@@ -30,6 +31,10 @@ function MyClass(){
         setActiveKey(key)
     }
 
+    const openArchive = () => {
+        archiveRef.current.archiveManager()
+    }
+
     return(
         <div className={styles.myClass}>
             <TopCourse/>
@@ -41,11 +46,12 @@ function MyClass(){
                     tabBarGutter={45}
                     tabBarExtraContent={
                         <div className={styles.courseAction}>
-                            <Button className={styles.archiveManager}>归档管理</Button>
+                            <Button className={styles.archiveManager} onClick={openArchive}>归档管理</Button>
                             <Input placeholder={"搜索我的课程"} className={styles.searchCourse}/>
                         </div>
                     }
                 />
+                <ArchiveManagerWindow onRef={archiveRef}/>
             </div>
         </div>
     )

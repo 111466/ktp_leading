@@ -1,8 +1,9 @@
-import React, {useRef, useState} from "react";
+import React, {MouseEventHandler, useRef, useState} from "react";
 import styles from "./index.module.css";
-import {Button, Card, Popover} from "antd";
+import {Button, Card, MenuProps, Popover} from "antd";
 import CourseOverview from "../../../../components/courseOverview/index";
-import CreateCourseWindow from "../createCourseWindow/index";
+import CreateCourseWindow from "../windows/createAndAddCourseWindow/index";
+import {buttonClickType} from "@/page/main/myClass/topCourse/interface";
 
 const headStyle: React.CSSProperties = {
     fontSize:"20px",
@@ -19,22 +20,19 @@ const bodyStyle: React.CSSProperties = {
 }
 
 function TopCourse(){
-    // // 创建课程modal的展示属性
-    // const [isOpenWindow,setIsOpenWindow] = useState<boolean>(false)
     //创建加入按钮卡片的展示属性
     const [open,setOpen] = useState<boolean>(false)
     const courseWindow = useRef<any>()
 
-    const createCourse = () => {
-        // setIsOpenWindow(true)
-        courseWindow.current.setIsModalOpen(true)
-        console.log(courseWindow)
-        hide()
-    }
-
-    const hide = () => {
+    const openModal = (flag:string) => {
+        if(flag==="createBtn"){
+            courseWindow.current.createCourse()
+        }else if(flag==="addBtn"){
+            console.log(1)
+            courseWindow.current.addCourse()
+        }
         setOpen(false);
-    };
+    }
 
     const handleOpenChange = (newOpen: boolean) => {
         setOpen(newOpen);
@@ -42,9 +40,9 @@ function TopCourse(){
 
     const content = (
         <div>
-            <Button type={"text"} className={styles.courseBtn} onClick={createCourse}>创建课程</Button>
+            <Button id="createCourse" type={"text"} className={styles.courseBtn} onClick={()=>openModal("createBtn")}>创建课程</Button>
             <br/>
-            <Button type={"text"} className={styles.courseBtn}>加入课程</Button>
+            <Button id="openCourse" type={"text"} className={styles.courseBtn} onClick={()=>openModal("addBtn")}>加入课程</Button>
         </div>
     );
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ktp_leading.iml" filepath="$PROJECT_DIR$/.idea/ktp_leading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ktp_leanding.iml" filepath="$PROJECT_DIR$/../ktp_leanding.iml" />
     </modules>
   </component>
 </project>
