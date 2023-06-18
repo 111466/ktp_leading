@@ -1,0 +1,31 @@
+.myClass {
+    width:1420px;
+    margin: 60px auto auto;
+}
+
+.semesterCourse{
+    width: 1260px;
+    margin: auto;
+    position: relative;
+    top:30px;
+}
+
+.courseAction{
+    width: 360px;
+    height: 40px;
+}
+
+.archiveManager{
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    float: left;
+}
+
+.searchCourse{
+    width: 220px;
+    height: 35px;
+    float: right;
+    border-radius: 30px;
+    font-size: 16px;
+}

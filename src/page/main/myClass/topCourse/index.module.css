@@ -1,0 +1,25 @@
+.topCourseDiv {
+    width: 1260px;
+    height: 420px;
+    margin: auto;
+    position: relative;
+    top:20px;
+    border: 1px solid #beb9b9;
+    border-radius: 5px;
+}
+
+.addCourseBtn{
+    width: 170px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.courseBtn{
+    border:none;
+    border-radius: 0;
+    width: 100px;
+}
+
+.popover{
+    padding:0;
+}
