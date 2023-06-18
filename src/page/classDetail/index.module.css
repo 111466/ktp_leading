@@ -1,0 +1,6 @@
+.classDetail {
+    width:100%;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    background-color: gainsboro;
+}

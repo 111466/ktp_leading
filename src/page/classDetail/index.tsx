@@ -1,8 +1,6 @@
 import React from 'react'
-import {Link, Route, useHistory} from "react-router-dom";
-import LessonPreparationArea from "../../lessonPreparationArea";
-import Performance from "../performance";
-import Member from "../member";
+import {useHistory} from "react-router-dom";
+import styles from "./index.module.css"
 
 function ClassDetail(){
     const history = useHistory();
@@ -17,7 +15,7 @@ function ClassDetail(){
     }
 
     return(
-        <div>课堂详情
+        <div className={styles.classDetail}>课堂详情
             <br/>
             <button onClick={toMember}>成员管理</button>
             <button onClick={toPerformance}>成绩管理</button>

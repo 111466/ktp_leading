@@ -6,3 +6,5 @@ export interface registerData {
     name:string,
     school:string
 }
+
+export type InputRef = HTMLInputElement | null;

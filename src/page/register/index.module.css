@@ -65,6 +65,11 @@
 }
 
 .registerBtn{
+    height:150px;
+    margin-left:2px;
+}
+
+.notarize{
     width:84%;
     height:50px;
     margin-left: 8%;
@@ -74,3 +79,33 @@
     border: none;
 }
 
+.toLogin{
+    margin-left:64%;
+    margin-top:30px;
+}
+
+h3{
+    font-size:20px;
+    margin-left:40px;
+    margin-top:-5px;
+    margin-bottom:5px;
+}
+
+.inputCode {
+    width:65%;
+    height:40px;
+    margin-right:10px;
+}
+
+.reCode {
+    width:32%;
+    height:40px;
+}
+
+.codeBtn {
+    border-radius:0;
+    width:30%;
+    height:40px;
+    margin-top:20px;
+    margin-left:35%;
+}

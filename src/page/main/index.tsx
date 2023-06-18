@@ -1,33 +1,24 @@
-import React from 'react'
-import {Link, Route, useHistory} from "react-router-dom";
-import ClassDetail from "./classDetail";
-import LessonPreparationArea from "../lessonPreparationArea";
-import Member from "./member";
-import Performance from "./performance";
-import Homework from "./homework";
+import React from "react";
+import styles from "./index.module.css"
+import MyClass from "./myClass/index";
+import Header from "./header/index"
+import {Route, Switch} from "react-router-dom";
+import routes from "../../routes/index";
+import LessonPreparationArea from "./lessonPreparationArea/index";
+import ClassDetail from "../classDetail/index";
 
 function Main(){
-    const history = useHistory();
-    const toClassDetail = () => {
-        history.push("/main/classDetail")
-    }
-
-    const toLessonPreparationArea = () => {
-        history.push("/main/lessonPreparationArea")
-    }
-
     return(
-        <div>
-            <div>我的课堂</div>
-            <button onClick={toClassDetail}>课堂详情</button>
-            <button onClick={toLessonPreparationArea}>备课区</button>
-            <Route path={"/main/classDetail"} component={ClassDetail}/>
-            <Route path={"/main/lessonPreparationArea"} component={LessonPreparationArea}/>
-            <Route path={"/main/member"} component={Member}/>
-            <Route path={"/main/performance"} component={Performance}/>
-            <Route path={"/main/homework"} component={Homework}/>
+        <div className={styles.main}>
+            <Header/>
+            <Switch>
+                <Route exact={true} path={routes.MAIN} component={MyClass}/>
+                <Route path={routes.LESSON_PREPARATION_AREA} component={LessonPreparationArea}/>
+                <Route path={routes.CLASS_DETAIL} component={ClassDetail}/>
+            </Switch>
         </div>
     )
 }
 
 export default Main;
+

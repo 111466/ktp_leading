@@ -1,0 +1,11 @@
+.ant-tabs-tab-btn{
+    font-size: 18px;
+}
+
+.ant-collapse-content-box{
+    padding-left:0 !important;
+}
+
+.ant-popover-inner{
+    padding: 5px 0 !important;
+}
